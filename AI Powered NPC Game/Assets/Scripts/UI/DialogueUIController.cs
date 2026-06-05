@@ -20,9 +20,11 @@ public class DialogueUIController : MonoBehaviour
 
     [Header("Trust Bar")]
     public Slider trustBar;
+    public Slider trustBarOverlay;
 
     [Header("References")]
     public DialogueManager dialogueManager;
+    public NPCEmotionSystem emotionSystem;
 
     void Start()
     {
@@ -37,6 +39,12 @@ public class DialogueUIController : MonoBehaviour
     {
         if (dialoguePanel != null && dialoguePanel.activeSelf)
             if (Keyboard.current.enterKey.wasPressedThisFrame) OnSendClicked();
+
+        if (trustBarOverlay != null && emotionSystem != null)
+            trustBarOverlay.value = emotionSystem.trustScore / 100f;
+
+        if (trustBar != null && emotionSystem != null)
+            trustBar.value = emotionSystem.trustScore / 100f;
     }
 
     public void Show()
@@ -63,6 +71,13 @@ public class DialogueUIController : MonoBehaviour
     {
         if (thinkingIndicator != null) thinkingIndicator.SetActive(show);
         if (sendButton != null) sendButton.interactable = !show;
+    }
+
+    // Called by DialogueManager when the ending sequence starts (Phase 8)
+    public void LockInput(bool locked)
+    {
+        if (playerInputField != null) playerInputField.interactable = !locked;
+        if (sendButton != null) sendButton.interactable = !locked;
     }
 
     void OnSendClicked()

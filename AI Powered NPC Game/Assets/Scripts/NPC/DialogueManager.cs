@@ -45,7 +45,8 @@ public class DialogueManager : MonoBehaviour
         if (dialogueUI == null) return;
 
         conversationHistory.Clear();
-        conversationHistory.Add(new Message {
+        conversationHistory.Add(new Message
+        {
             role = "system",
             content = BuildSystemPrompt()
         });
@@ -56,7 +57,8 @@ public class DialogueManager : MonoBehaviour
 
         string greeting = "Halt. You tread on sealed ground. State your purpose, wanderer.";
         dialogueUI.DisplayNPCText(greeting);
-        conversationHistory.Add(new Message {
+        conversationHistory.Add(new Message
+        {
             role = "assistant",
             content = greeting
         });
@@ -78,7 +80,8 @@ public class DialogueManager : MonoBehaviour
         playerMessage = playerMessage.Trim();
         if (string.IsNullOrEmpty(playerMessage)) return;
 
-        conversationHistory.Add(new Message {
+        conversationHistory.Add(new Message
+        {
             role = "user",
             content = playerMessage
         });
@@ -96,6 +99,10 @@ public class DialogueManager : MonoBehaviour
         string mood = (emotionSystem != null)
             ? emotionSystem.GetEmotionDescription()
             : "wary and formal, guarded but not hostile";
+
+        string waystoneContext = (WaystoneManager.Instance != null)
+    ? WaystoneManager.Instance.GetWaystoneContext()
+    : "";
 
         return
             "You are Eolindra, the Warden of the Ashwood. You are an ancient forest " +
@@ -144,7 +151,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueUI != null) dialogueUI.DisplayNPCText(response);
         AddMemory("Eolindra said: " + response);
-        conversationHistory.Add(new Message {
+        conversationHistory.Add(new Message
+        {
             role = "assistant",
             content = response
         });

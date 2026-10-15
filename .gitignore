@@ -482,3 +482,6 @@
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/unity,visualstudio,visualstudiocode
+# Local API credentials
+**/Assets/Settings 1/APIConfig.asset
+**/Assets/Settings/APIConfig.asset

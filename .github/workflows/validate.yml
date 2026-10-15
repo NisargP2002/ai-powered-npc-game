@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - name: Fetch validation inputs from Git LFS
+        run: >-
+          git lfs pull
+          --include="AI Powered NPC Game/Assets/Scenes/MainScene.unity,AI Powered NPC Game/ProjectSettings/EditorBuildSettings.asset"
       - name: Install ripgrep
         run: sudo apt-get update && sudo apt-get install -y ripgrep
       - name: Validate secrets and Unity configuration

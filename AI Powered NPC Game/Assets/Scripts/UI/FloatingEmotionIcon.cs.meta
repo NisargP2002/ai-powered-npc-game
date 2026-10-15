@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: adae37fffc46c418ab9090cce18e5807
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - eolindraTransform: {instanceID: 0}
+  - emotionSystem: {instanceID: 0}
+  - rectTransform: {instanceID: 0}
+  - iconImage: {instanceID: 0}
+  - spriteThinking: {fileID: 21300000, guid: 09ec0fd1641c32a4693b5bfbf3e4b41d, type: 3}
+  - spriteNeutral: {fileID: 21300000, guid: 055e66d9bf1920945ba96f7fcd6078d8, type: 3}
+  - spriteWarm: {fileID: 21300000, guid: 602d7af576b410f4e914a45c0f7e9a59, type: 3}
+  - spriteSad: {fileID: 21300000, guid: 51c0df0963207454c8efd5db8a91f138, type: 3}
+  - spriteAngry: {fileID: -196926976, guid: f6dfcf977474ff74094ecf05ff9db416, type: 3}
+  - spriteHostile: {fileID: 21300000, guid: 3fcba67a485ed4850ad4f7134b5441f3, type: 3}
+  - spriteSuspicious: {fileID: 21300000, guid: 493675a81d7274968b96bd4fbbb91b8e, type: 3}
+  - spriteCurious: {fileID: 21300000, guid: e0e17c8415e204f42b7b987a36eece6f, type: 3}
+  - spriteGrateful: {fileID: 21300000, guid: 2607b5536c5244661aa35a16fec01e1b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

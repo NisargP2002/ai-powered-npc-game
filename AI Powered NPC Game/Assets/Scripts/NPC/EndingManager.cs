@@ -16,6 +16,12 @@ public class EndingManager : MonoBehaviour
 
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
     }
 
@@ -37,6 +43,12 @@ public class EndingManager : MonoBehaviour
     IEnumerator EndingSequence()
     {
         // Show ending canvas
+        if (endingCanvas == null || fadeImage == null || endingText == null)
+        {
+            Debug.LogError("[Ending] Ending UI references are not assigned.");
+            yield break;
+        }
+
         endingCanvas.SetActive(true);
 
         // Fade to black
